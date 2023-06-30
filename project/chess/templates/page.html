@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid" id="pageform">
+    <div class="row justify-content-center">
+        <div id="usrprof" class="col-sm-11 col-md-10 col-lg-5">
+            <h2>{{page.title}}</h2>
+            <span>{{page.content |safe}}</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

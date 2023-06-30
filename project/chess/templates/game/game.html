@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row justify-content-evenly">
+    <div id="myBoard" class="col-sm-10 col-md-10 col-lg-5"></div>
+    <div class="col-sm-10 col-md-10 col-lg-5" id="myinfo">
+      <div class="align-middle d-lg-block">
+        <label>Status:</label>
+        <div id="status"></div>
+        <div class="info">
+          <label>FEN:</label>
+          <div id="fen"></div>
+          <label>PGN:</label>
+          <div id="pgn"></div>
+          <a href="/game/hotseat/" id="again"><span class="btn btn-block btn-primary">Zagraj jescze raz</span></a>
+          <a href="/game/selectmode" id="gotomenu"><span class="btn btn-block btn-primary">Powrót do menu</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'scripts/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'scripts/chessboard-1.0.0.min.js' %}"></script>
+  <script src="{% static 'scripts/szaszki.js' %}"></script>
+  <script src="{% static 'scripts/game.js' %}"></script>
+</div>
+{% endblock %}

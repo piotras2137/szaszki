@@ -1,0 +1,302 @@
+//kolory 
+$tlo: #1c1c1c;
+$topbar: #3c3c3c;
+$main: #2c2c2c;
+$glow :rgba(0, 201, 219, 0.715);
+$font :white;
+
+// zasady 
+body {
+    background-color: $tlo;
+    color: $font;
+    overflow-wrap: break-word;
+    overscroll-behavior: contain;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: $topbar;
+    margin-top: auto;
+    max-width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+
+    div {
+        width: 100%;
+        display: block;
+        background-color: $topbar;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $glow;
+    }
+}
+
+#info {
+    align-items: center;
+    max-width: 100%;
+    margin: auto;
+}
+
+#myinfo {
+    background-color: $main;
+    margin: 1rem;
+
+    label {
+        font-weight: bolder;
+        color: $glow;
+    }
+}
+
+#myBoard {
+    overscroll-behavior: contain;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+
+    background-color: $main;
+}
+
+nav {
+    background-color: $topbar;
+    color: white;
+    font-weight: bold;
+}
+
+#logo {
+    color: $glow;
+}
+
+.nav-link {
+    span {
+        color: white;
+    }
+
+    span:hover {
+
+        color: $glow;
+
+    }
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: $glow;
+}
+
+.btn-danger:hover {
+    background-color: #bc2b3d;
+    ;
+}
+
+
+#lrform {
+    min-height: 800px;
+    background-color: $main;
+    text-align: center;
+    margin-top: 1rem;
+    overflow: hidden;
+
+    input {
+        width: 100%;
+    }
+
+    ul {
+        align-self: start;
+        text-align: left;
+    }
+
+    p {
+        text-align: left;
+    }
+
+    label {
+        font-weight: bold;
+        color: $glow;
+    }
+
+    input {
+        background-color: $topbar;
+        color: white;
+        border-style: none;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $glow;
+    }
+}
+
+.imag {
+    max-width: 200px;
+    margin: 1rem;
+}
+
+#usrprof {
+    min-height: 800px;
+    background-color: $main;
+    text-align: center;
+    margin-top: 1rem;
+    overflow: hidden;
+
+    input {
+        width: 100%;
+    }
+
+    ul {
+        align-self: start;
+        text-align: left;
+    }
+
+    p {
+        color: $glow;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    label {
+        font-weight: bold;
+        color: $glow;
+    }
+
+    input {
+        background-color: $topbar;
+        color: white;
+        border-style: none;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $glow;
+    }
+}
+
+.white-1e1d7 {
+    background-color: #eeeeee;
+    color: #32674d;
+}
+
+.black-3c85d {
+    background-color: #32674d;
+    color: #eeeeee;
+}
+
+#logoutlink:hover {
+    color: #bc2b3d;
+}
+
+.errorlist {
+    width: 100%;
+    display: none;
+
+    li {
+        text-align: center;
+    }
+}
+
+select {
+    margin: 0px;
+    padding: 0.2rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: $topbar;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+#pageform {
+    margin-bottom: 1rem;
+}
+
+#invform {
+    label {
+        display: none;
+    }
+}
+
+#id_pgn {
+    display: none;
+}
+
+#id_result {
+    display: none;
+}
+
+#id_difficulty {
+    display: none;
+}
+
+#id_playercolor {
+    display: none;
+}
+
+#id_player {
+    display: none;
+}
+
+#hiddenbutton {
+    visibility: hidden;
+}
+
+#id_player1 {
+    display: none;
+}
+
+#id_player2 {
+    display: none;
+}
+
+#id_invite {
+    display: none;
+}
+
+.win {
+    color: #32674d;
+    font-weight: bold;
+}
+
+.lose {
+    color: #bc2b3d;
+    font-weight: bold;
+}
+
+#again {
+    visibility: hidden;
+}
+
+#gotomenu {
+    visibility: hidden;
+}

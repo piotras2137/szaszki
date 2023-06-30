@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container-fluid" id="pageform">
+  <div class="row justify-content-center">
+    <div id="lrform" class="col-sm-11 col-md-10 col-lg-5">
+      <h3>Gra Online</h3>
+      <br />
+      {% if user.username != "" %}
+      <h4>Stwórz zaproszenie do gry Online</h4>
+      <form action="" method="post">
+        {% csrf_token %} {{ form }}
+        <button
+          type="submit"
+          value="Gra z komputerem"
+          class="btn btn-primary btn-lg btn-block"
+        >
+          Utwórz zaproszenie
+        </button>
+      </form>
+      {% endif %}
+      <br />
+      <h4>Dołącz do zaproszenia za pomocą kodu</h4>
+      <form action="" method="post">
+        {% csrf_token %} {{ joinform }}
+        <button
+          type="submit"
+          value="Gra z komputerem"
+          class="btn btn-primary btn-lg btn-block"
+        >
+          Dołącz do gry
+        </button>
+      </form>
+      <br>
+      <a href="/page/2">Zapoznaj się z zasadami gry w szachy</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

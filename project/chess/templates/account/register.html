@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid" id="pageform">
+  <div class="row justify-content-center">
+    <div id="lrform" class="col-sm-11 col-md-10 col-lg-5">
+      <h1>Rejestracja</h1>
+      <form method="POST">
+        {% csrf_token %} {{ register_form|crispy }}
+        <button class="btn btn-block btn-primary" type="submit">
+          Zarejestruj się
+        </button>
+      </form>
+      <p class="text-center">
+        masz już konto? <a href="/login">Zaloguj się</a>
+      </p>
+    </div>
+  </div>
+</div>
+{%endblock%}

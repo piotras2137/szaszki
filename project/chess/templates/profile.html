@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid" id="pageform">
+  <div class="row justify-content-center">
+    <div id="usrprof" class="col-sm-11 col-md-10 col-lg-5">
+      <h2> {{ usr.username }}</h2>
+      {% if usr.first_name %}
+      <p> imie </p>
+      <p> {{usr.first_name}}</p>
+      {% endif %}
+      {% if usr.last_name %}
+      <p> nazwisko </p>
+      {% endif %}
+      <p> data dołączenia </p>
+      {{ usr.date_joined }}
+      <p> ostatnie logowanie </p>
+      {{ usr.last_login }}
+
+      <br><br>
+      <p class="h5">ostatnie gry online:</p>
+      {% for onlinegame in onlinegames %}
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <p>Wynik</p>
+          {% if user == onlinegame.player1 %}
+          {% if onlinegame.result == '1' %}
+          <span class="win">zwycięstwo</span>
+          {% elif onlinegame.result == '2' %}
+          <span class="lose">porażka</span>
+          {% else%}
+          <span>remis</span>
+          {% endif %}
+          {% elif user == onlinegame.player2 %}
+          {% if onlinegame.result == '1' %}
+          <span class="lose">porażka</span>
+          {% elif onlinegame.result == '2' %}
+          <span class="win">zwycięstwo</span>
+          {% else%}
+          <span>remis</span>
+          {% endif %}
+          {% else %}
+          {% if onlinegame.result == '1' %}
+          <span>zwycięstwo białych</span>
+          {% elif onlinegame.result == '2' %}
+          <span>zwycięstwo czarnych</span>
+          {% else%}
+          <span>remis</span>
+          {% endif %}
+          {% endif %}
+          <p>Data</p>
+          <span>{{ onlinegame.date }}</span>
+          <p>Gracz Biały</p>
+          {% if onlinegame.player1 %}
+          <span><a href="/users/{{ onlinegame.player1 }}">{{ onlinegame.player1 }}</a></span>
+          {% else %}
+          <span>gracz niezalogowany</span>
+          {%endif%}
+          <p>Gracz Czarny</p>
+          {% if onlinegame.player2 %}
+          <span><a href="/users/{{ onlinegame.player2 }}">{{ onlinegame.player2 }}</a></span>
+          {% else %}
+          <span>gracz niezalogowany</span>
+          {%endif%}
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p>PGN</p>
+          <span>{{ onlinegame.pgn }}</span>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <br>
+      {% endfor%}
+      <p class="h5">ostatnie gry z komputerem: </p>
+      {% for aigame in aigames %}
+
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <p>Wynik</p>
+          {% if aigame.result == 'porażka'%}
+          <span class="lose">{{ aigame.result }}</span>
+          {% elif aigame.result == 'zwycięstwo'%}
+          <span class="win">{{ aigame.result }}</span>
+          {% else %}
+          <span>{{ aigame.result }}</span>
+          {% endif %}
+          <p>Kolor gracza</p>
+          <span>{{ aigame.playercolor }}</span>
+          <p>Poziom Trudności</p>
+          <span>{{ aigame.difficulty }}</span>
+          <p>Data</p>
+          <span>{{ aigame.date }}</span>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p>PGN</p>
+          <span>{{ aigame.pgn }}</span>
+        </div>
+      </div>
+      <hr>
+      <br>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

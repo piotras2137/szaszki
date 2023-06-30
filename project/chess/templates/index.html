@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row justify-content-evenly">
+    <div id="myBoard" class="col-sm-10 col-md-10 col-lg-5"></div>
+    <div class="col-sm-10 col-md-10 col-lg-5" id="myinfo">
+      <div class="align-middle d-lg-block">
+        <a href="game/selectmode/"
+          ><span class="btn btn-lg btn-primary btn-block">Gra Lokalna</span></a
+        ><br />
+        <a href="lobby/"
+          ><span class="btn btn-lg btn-primary btn-block">Gra online</span></a
+        >
+
+        {% if user.is_authenticated %}
+        <a href="/users/{{ user.username }}"
+          ><span class="btn btn-lg btn-primary btn-block">Profil</span></a
+        >
+        <br />
+        <a href="logout"
+          ><span class="btn btn-lg btn-danger btn-block">Wyloguj się</span></a
+        >
+        <br />
+
+        {% else %}
+        <a href="login"
+          ><span class="btn btn-lg btn-primary btn-block">Zaloguj się</span></a
+        >
+        <br />
+        <a href="register"
+          ><span class="btn btn-lg btn-primary btn-block">Zarejestruj się</span></a
+        >
+        <br />
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'scripts/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'scripts/chessboard-1.0.0.min.js' %}"></script>
+  <script src="{% static 'scripts/szaszki.js' %}"></script>
+  <script src="{% static 'scripts/demo.js' %}"></script>
+</div>
+{% endblock %}

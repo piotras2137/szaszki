@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container-fluid" id="pageform">
+  <div class="row justify-content-center">
+    <div id="lrform" class="col-sm-11 col-md-10 col-lg-5">
+      <h3>Wybierz tryb gry</h3>
+      <br />
+      <h4>Gra HotSeat</h4>
+      <a href="/game/hotseat/"
+        ><span class="btn btn-lg btn-primary btn-block">Gra HotSeat</span></a
+      >
+      <br />
+      <br />
+      <h4>Gra z komputerem</h4>
+      <form action="" method="post">
+        {% csrf_token %} {{ form }}
+        <button
+          type="submit"
+          value="Gra z komputerem"
+          class="btn btn-primary btn-lg btn-block"
+        >
+          Gra z komputerem
+        </button>
+      </form>
+      <br>
+      <a href="/page/2">Zapoznaj się z zasadami gry w szachy</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
